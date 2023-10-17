@@ -1,0 +1,511 @@
+/*Общие*/
+
+*,
+*::before,
+*::after{
+	/*margin: 0;*/
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+body{
+	color: #505050;
+	font-family: 'Lato' sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+
+}
+
+ul{
+	list-style: none;
+}
+.container{
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;	
+}
+
+.container-content{
+	max-width: 970px;
+	margin: 0 auto;
+}
+
+.section-line{
+	border-bottom: 1px solid rgba(208, 212, 216,.5);
+}
+/*Стилим Header*/
+
+.header__top{
+	background-image: url('../images/top-bg.jpg');
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 40px;
+
+}
+
+.title{
+	font-family: Georgia;
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 38px;
+	color: #4E5665;
+	margin-bottom: 22px;
+	text-align: center;
+
+}	
+	
+
+/*Делаем рамку c надписью и стилим тексты*/
+.header__top-inner{
+	border: 2px solid #ECB84C;
+	border-bottom: none;
+	display: flex;
+	flex-direction: column;
+	height: 100%;/*растянули картинку и border*/
+	color: #fff;
+	font-family: Georgia;
+
+}
+
+.header__title{
+	font-weight: bold;
+	font-size: 200px;
+	line-height: 227px;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+	margin: auto;	
+}
+
+.header__text{
+	font-size: 24px;
+	line-height: 27px;
+	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+	display: flex;
+	white-space: nowrap;
+	align-items: center;
+	margin-bottom: -13px;
+	
+
+}
+/*Делаем нижнюю границу*/
+.header__text::before,
+.header__text::after{
+	content: "";
+	border-top: 2px solid #ECB84C;
+	width: 100%;
+}
+
+.header__text::before{
+	margin-right: 30px;
+}
+.header__text::after{
+	margin-left: 30px;
+}
+/* Стилим Меню*/
+.menu{
+	border-bottom: 1px solid rgba(208, 212, 216, .5);
+}
+.menu__list{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu__list-link{
+	padding: 24px 10px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 19px;
+	color: #909090;
+	margin: 0 6px;
+	border-bottom: 4px solid transparent;
+	transition: all .5s;
+}
+
+.menu__list-link:hover{
+	color: #4E5665;
+	border-bottom: 4px solid #ECB84C;
+}
+
+/*Стилим секцию reason*/
+
+.reason{
+	padding: 80px 0 0;
+}
+.reason__title{
+	font-family: Georgia;
+	font-size: 32px;
+	line-height: 38px;
+	color: #4E5665;
+	text-align: center;
+	margin-bottom: 22px;
+}
+
+.reason__link{
+	text-align: right;
+}
+.reason__link a{
+	font-weight: 700;
+	color: #ECB84C;
+	margin-bottom: 36px;
+}
+
+.reason__statistics{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-bottom: 80px;
+	}
+
+.reason__statistics-num{
+	font-family: Lato;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 30px;
+	color: #4E5665;
+	margin-top: 33px;
+	text-align: center;
+
+}
+.reason__statistics-text{
+	font-family: Lato;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 17px;
+	color: #909090;
+	text-align: center;
+}
+/*Стилим about*/
+
+.about{
+	padding: 80px 0 0;
+}
+.about__title{
+	text-align: center;
+}
+
+.about__text{
+	margin-bottom: 72px;
+}
+
+.about__item{
+	margin-bottom: 100px;
+	padding: 70px 0;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.about__box{
+	padding: 33px 40px;
+	background-color: #fff;
+	max-width: 470px;
+	position: relative;
+}
+
+.about__box::before,
+.about__box::after{
+	content:"";
+	position: absolute;
+	width: 33px;
+	height: 33px;
+}
+
+.about__box::before{ /* 1 Способ*/
+	background-image: url('../images/corner-left.svg');
+	top: 19px;
+	left: 19px;
+}
+
+.about__box::after{ /* 2 Способ Он Лучше!*/
+	border-bottom: 2px solid #ecb84c;
+	border-right: 2px solid #ecb84c;
+	right: 19px;
+	bottom: 19px;
+}
+
+
+
+.about__box-title{
+	font-family: Georgia;
+	font-size: 24px;
+	line-height: 25px;
+	color: #4E5665;
+	margin-bottom: 20px;
+}
+
+.about__box-text{
+	font-family: Lato;
+	font-size: 16px;
+	line-height: 28px;
+	color: #505050;
+
+}
+
+.about__item:nth-child(even){
+	background-position: left;
+}
+
+.about__item:nth-child(even) .about__box{
+	margin-left: auto;
+}
+
+.about__item:nth-child(even) .about__box::before{
+	right: 19px;
+	left: auto;
+	background-image: none;
+	border-right: 2px solid #ecb84c;
+	border-top: 2px solid #ecb84c;
+}
+
+
+.about__item:nth-child(even) .about__box::after{
+	left: 19px;
+	border-right: none;
+	border-left: 2px solid #ecb84c;
+}
+
+
+.about__preview-title{
+	margin-bottom: 38px;
+}
+
+.about__preview-text{
+	margin: 53px auto 80px;
+}
+
+.about__images-box{
+	padding-top: 73px;
+	position: relative;
+
+}
+
+/*Стилим Кнопки*/
+
+.about__dot{
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #ECB84C75;
+	position: absolute;
+	cursor: pointer;
+}
+
+.about__dot--1{
+	top: 190px;
+	left: 148px;
+
+}
+.about__dot--2{
+	top: 185px;
+	left: 496px;
+}
+
+.about__dot--3{
+	top: 147px;
+	right: 372px;
+	bottom: 222px;
+}
+.about__dot--4{
+	top: 349px;
+	right: 298px;
+}
+.about__dot::after{
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #FFD600;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+/*Делаем надпись и линию*/
+.about__dot::before{
+ content: "";
+ position: absolute;
+ background-image: url('../images/line.svg');
+ width: 244px;
+ height: 122px;
+ top: -113px;
+ left: 25px;
+ display: none;
+}
+
+.about__dot-text{
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 28px;
+	color: #505050;
+	position: absolute;
+	white-space: nowrap;
+	top: -140px;
+	left: 150px;
+	display: none;
+}
+
+.about__dot:hover::before{
+	display: block;
+}	
+
+.about__dot:hover .about__dot-text{
+	display: block;
+}
+
+.photo{
+	padding: 80px 0;
+}
+
+.photo__title{
+	margin-bottom: 42px;
+	text-align: center;
+}
+
+.photo__text{
+	padding-bottom: 48px;
+	margin-bottom: 56px;
+	position: relative;
+}
+
+.photo__text::after{
+	content: "";
+	position: absolute;
+	width: 270px;
+	height: 1px;
+	background-color: rgba(208, 212, 216, .5);
+	bottom: 0;
+	margin: 0 auto;
+	left: 400px;
+}
+
+/*Делаем Слайдер*/
+
+.photo__slider{
+	max-width: 640px;
+	margin: 0 auto;
+	filter: drop-shadow(0px 2px 24px rgba(0, 0, 0, 0.3));
+}
+
+/*Стилим и Выставляем кнопки*/
+.slick-arrow{
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: #ecb84c;
+	cursor: pointer;
+	outline: none;
+	/*Выставляем*/
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	z-index: 5;
+}
+
+.slick-prev{
+	left: -20px;
+}
+.slick-next{
+	right: -20px;
+}
+
+/*Стилим Футер*/
+.footer{
+	padding: 55px 0 32px;
+	background: #F8F8F8;
+}
+
+.footer__items{
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__item{
+	width: 140px;
+}
+
+.footer__item--company{
+	width: 300px;
+	padding-left: 180px;
+}
+
+.footer__item--blog{
+	width: 300px;
+}
+
+
+.footer__item-title{
+	font-family: Lato;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	color: #4E5665;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+
+}
+.footer__item-link{
+	font-size: 14px;
+	line-height: 19px;
+	margin-bottom: 8px;
+}
+
+.footer__item-link--social{
+	padding-left: 28px;
+	position: relative;	
+}
+
+.footer__item-link--social::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 16px;
+	height: 16px;
+
+}
+
+.footer__item-link--message::before{
+	background-image: url('../images/message.svg');
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 15px;
+	top: 1px;
+}
+.footer__item-link--facebook::before{
+	background-image: url('../images/facebook-logo.svg');
+	background-repeat: no-repeat;
+}
+.footer__item-link--instagram::before{
+	background-image: url('../images/instagram-logo.svg');
+	background-repeat: no-repeat;
+}
+.footer__item-link--youtube::before{
+	background-image: url('../images/youtube-symbol.svg');
+	background-repeat: no-repeat;
+}
+.footer__item-link--email::before{
+	background-image: url('../images/email-symbol.svg');
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 13px;
+	top: 2px;
+}
+
+
+
+
+.footer__copy{
+	padding-top: 40px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 19px;
+}
+
